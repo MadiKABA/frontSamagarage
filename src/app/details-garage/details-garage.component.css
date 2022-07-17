@@ -1,0 +1,45 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: #F3F2EF;
+}
+.banner_list_garages{
+  width: 100%;
+  height: 330px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.div_img_garage{
+  width: 150px;
+  height: 118px;
+  margin-top: 20px;
+}
+.card_detail_garage {
+  box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.2), 0 0px 4px 0 rgba(0, 0, 0, 0.19);
+  padding:10px 0;
+}
+.card_detail_garage1 {
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.2), 0 0px 4px 0 rgba(0, 0, 0, 0.19);
+  margin-top: 0.5px;
+  padding:10px 0;
+}
+.div_plus_de_garage{
+  background-color: #000054;
+  width: 100%;
+  height: 250px;
+}
+.btn_enregistrer_votre_garage{
+  background-color: #FCB034;
+  border-radius: 15px;
+  align-items: center;
+  width: 280px;
+  height: 40px;
+  margin: 0 auto;
+  display: block;
+  margin-top: 30px;
+  font-size: 20px;
+  font-weight: bold;
+}
