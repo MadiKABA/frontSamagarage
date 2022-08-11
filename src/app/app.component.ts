@@ -6,5 +6,7 @@ declare var activeNavbar:any;
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  title: any;
+
 
 }

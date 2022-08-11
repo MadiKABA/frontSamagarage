@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<h1 class="text-syle">Liste des utilisateurs</h1>
+<p class="text-center text-danger" *ngIf="messageError">{{messageError}}</p>
+<div class="formulaire-container" *ngIf="utilisateurs">
+  <div class="button-add-input-search my-4 mx-3">
+    <button class="button-add-user">
+      <i class="bi bi-plus-circle icone-add-user" routerLink="/Ajouttilisateurs"></i>
+      <span class="titre-btn-add-user" routerLink="/Ajoututilisateurs">Ajouter un Utilisateurs</span>
+    </button>
+    <div>
+      <input type="search" class="input-search-admin" placeholder="Rechercher un profile">
+      <button class="btn-search-admin">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </div>
+  <hr>
+  <div class="div-table-data">
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Prenom</th>
+        <th scope="col">Email</th>
+        <th scope="col">Telephone</th>
+        <th scope="col">Adresse</th>
+        <th scope="col" colspan="3">Actions</th>
+      </tr>
+      </thead>
+      <tbody *ngIf="utilisateurs">
+      <tr *ngFor="let utilisateur of utilisateurs">
+        <th scope="row">{{utilisateur.id}}</th>
+        <td>{{utilisateur.nom}}</td>
+        <td>{{utilisateur.prenom}}</td>
+        <td>{{utilisateur.email}}</td>
+        <td>{{utilisateur.telephone}}</td>
+        <td>{{utilisateur.adresse}}</td>
+        <td class="style-icone" (click)="delete(utilisateur.id)">
+          <i class="bi bi-trash3-fill icone-delete"></i>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+</body>
+</html>

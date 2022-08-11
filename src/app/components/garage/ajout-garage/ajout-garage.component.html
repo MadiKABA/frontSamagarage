@@ -1,0 +1,150 @@
+<div class="formulaire-container">
+  <h1 class="text-center text-syle">Creer un profile</h1>
+  <div class="fom-container">
+    <div *ngIf="errorMessage">
+      <p class="text-center text-danger">{{errorMessage}}</p>
+    </div>
+    <form [formGroup]="addGarage" (ngSubmit)="save()">
+      <div class="div-champ-input">
+        <div class="test">
+          <label class="titre-inpute" for="nom">Nom</label>
+          <input type="text" formControlName="nom" class="champ-input" id="nom" maxlength="100">
+          <div *ngIf="controleSaisie['nom'].touched && controleSaisie['nom'].invalid">
+            <p *ngIf="controleSaisie['nom'].errors && controleSaisie['nom'].errors['required']" class="text-danger">
+              * Le champs est obligatoire
+            </p>
+            <p *ngIf="controleSaisie['nom'].errors" class="text-danger">
+              * Le champs ne doit pas avoir des caracteres speciaux
+            </p>
+          </div>
+
+        </div>
+        <div class="test">
+          <label class="titre-inpute" for="description">Description</label>
+          <input type="text" formControlName="description" class="champ-input" id="description" maxlength="100">
+          <div *ngIf="controleSaisie['description'].touched && controleSaisie['description'].invalid">
+            <p *ngIf="controleSaisie['description'].errors && controleSaisie['description'].errors['required']" class="text-danger">
+              * Le champs est obligatoire
+            </p>
+            <p *ngIf="controleSaisie['description'].errors" class="text-danger">
+              * Le champs ne doit pas avoir des caracteres speciaux
+            </p>
+          </div>
+
+        </div>
+        <div class="test">
+          <label class="titre-inpute" for="longitude">Longitude</label>
+          <input type="text" formControlName="longitude" class="champ-input" id="longitude" maxlength="100">
+          <div *ngIf="controleSaisie['longitude'].touched && controleSaisie['longitude'].invalid">
+            <p *ngIf="controleSaisie['longitude'].errors && controleSaisie['longitude'].errors['required']" class="text-danger">
+              * Le champs est obligatoire
+            </p>
+            <p *ngIf="controleSaisie['longitude'].errors" class="text-danger">
+              * Le champs ne doit pas avoir des caracteres speciaux
+            </p>
+          </div>
+
+        </div>
+        <div class="test">
+          <label class="titre-inpute" for="latitude">Latitude</label>
+          <input type="text" formControlName="latitude" class="champ-input" id="latitude" maxlength="100">
+          <div *ngIf="controleSaisie['latitude'].touched && controleSaisie['latitude'].invalid">
+            <p *ngIf="controleSaisie['latitude'].errors && controleSaisie['latitude'].errors['required']" class="text-danger">
+              * Le champs est obligatoire
+            </p>
+            <p *ngIf="controleSaisie['latitude'].errors" class="text-danger">
+              * Le champs ne doit pas avoir des caracteres speciaux
+            </p>
+          </div>
+
+        </div>
+        <div class="test">
+          <label class="titre-inpute" for="heureOurverture">heureOurverture</label>
+          <input type="text" formControlName="heureOurverture" class="champ-input" id="heureOurverture" maxlength="100">
+          <div *ngIf="controleSaisie['heureOurverture'].touched && controleSaisie['heureOurverture'].invalid">
+            <p *ngIf="controleSaisie['heureOurverture'].errors && controleSaisie['heureOurverture'].errors['required']" class="text-danger">
+              * Le champs est obligatoire
+            </p>
+            <p *ngIf="controleSaisie['heureOurverture'].errors" class="text-danger">
+              * Le champs ne doit pas avoir des caracteres speciaux
+            </p>
+          </div>
+
+        </div>
+        <div class="test">
+          <label class="titre-inpute" for="heureFermeture">heureOurverture</label>
+          <input type="text" formControlName="heureFermeture" class="champ-input" id="heureFermeture" maxlength="100">
+          <div *ngIf="controleSaisie['heureFermeture'].touched && controleSaisie['heureFermeture'].invalid">
+            <p *ngIf="controleSaisie['heureFermeture'].errors && controleSaisie['heureFermeture'].errors['required']" class="text-danger">
+              * Le champs est obligatoire
+            </p>
+            <p *ngIf="controleSaisie['heureFermeture'].errors" class="text-danger">
+              * Le champs ne doit pas avoir des caracteres speciaux
+            </p>
+          </div>
+
+        </div>
+        <div class="test">
+          <label class="titre-inpute" for="adresse">adresse</label>
+          <input type="text" formControlName="adresse" class="champ-input" id="adresse" maxlength="100">
+          <div *ngIf="controleSaisie['adresse'].touched && controleSaisie['adresse'].invalid">
+            <p *ngIf="controleSaisie['adresse'].errors && controleSaisie['adresse'].errors['required']" class="text-danger">
+              * Le champs est obligatoire
+            </p>
+            <p *ngIf="controleSaisie['adresse'].errors" class="text-danger">
+              * Le champs ne doit pas avoir des caracteres speciaux
+            </p>
+          </div>
+
+        </div>
+        <div class="test">
+          <label class="titre-inpute" for="image">image</label>
+          <input type="file" formControlName="image" class="champ-input" id="image" (change)="uploadImage($event)">
+          <div *ngIf="controleSaisie['image'].touched && controleSaisie['image'].invalid" >
+            <p *ngIf="controleSaisie['image'].errors && controleSaisie['image'].errors['required']" class="text-danger">
+              * Le champs est obligatoire
+            </p>
+            <p *ngIf="controleSaisie['image'].errors" class="text-danger">
+              * Le champs ne doit pas avoir des caracteres speciaux
+            </p>
+          </div>
+
+        </div>
+        <div class="test">
+          <label class="titre-inpute" for="zone_id">Profile</label>
+          <select class="champ-input" formControlName="zone_id" id="zone_id" required>
+            <option>Selection une Zone</option>
+            <option *ngFor="let zone of zones" [ngValue]="zone.id">{{zone.libelle}}</option>
+          </select>
+          <div *ngIf="controleSaisie['zone_id'].touched && controleSaisie['zone_id'].invalid">
+            <p *ngIf="controleSaisie['zone_id'].errors && controleSaisie['zone_id'].errors['required']" class="text-danger">
+              * Le champs est obligatoire
+            </p>
+            <p *ngIf="controleSaisie['zone_id'].errors" class="text-danger">
+              * Le champs ne doit pas avoir des caracteres speciaux
+            </p>
+          </div>
+        </div>
+        <div class="test">
+          <label class="titre-inpute" for="Utilisateur_id">Profile</label>
+          <select class="champ-input" formControlName="Utilisateur_id" id="Utilisateur_id" required>
+            <option>Selection une Zone</option>
+            <option *ngFor="let utilisateur of utilisateurs" [ngValue]="utilisateur.id">{{utilisateur.nom}}{{utilisateur.prenom}}</option>
+          </select>
+          <div *ngIf="controleSaisie['Utilisateur_id'].touched && controleSaisie['Utilisateur_id'].invalid">
+            <p *ngIf="controleSaisie['Utilisateur_id'].errors && controleSaisie['Utilisateur_id'].errors['required']" class="text-danger">
+              * Le champs est obligatoire
+            </p>
+            <p *ngIf="controleSaisie['Utilisateur_id'].errors" class="text-danger">
+              * Le champs ne doit pas avoir des caracteres speciaux
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="style-btn-envoyer my-2">
+        <button [disabled]="addGarage.invalid" class="save-btn">Enregistrer</button>
+      </div>
+    </form>
+  </div>
+
+</div>

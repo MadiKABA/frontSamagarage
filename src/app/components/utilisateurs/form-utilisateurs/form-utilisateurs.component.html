@@ -1,0 +1,133 @@
+<div class="formulaire-container">
+  <h1 *ngIf="!data" class="text-center text-syle">Creer un Utilisateurs</h1>
+  <h1 *ngIf="data" class="text-center text-syle">Modifier un Utilisateurs</h1>
+  <!--    {{this.saveAdministrateur.value | json}}-->
+  <div *ngIf="errorMessage">
+    <p class="text-center text-danger">{{errorMessage}}</p>
+  </div>
+  <div class="fom-container">
+    <form [formGroup]="saveUtilisateurs" (ngSubmit)="save()">
+      <div class="div-champ-input">
+        <div class="test">
+          <label class="titre-inpute" for="nom">Nom</label>
+          <input type="text" formControlName="nom" class="champ-input" id="nom" maxlength="60" required>
+          <span class="text-danger"
+                *ngIf="saveUtilisateurs.controls['nom'].touched
+                        && saveUtilisateurs.controls['nom'].errors
+                        && saveUtilisateurs.controls['nom'].errors['required']">
+                        Le nom de l'Utilisateurs est obligatoire
+                    </span>
+          <span class="text-danger"
+                *ngIf="saveUtilisateurs.controls['nom'].touched
+                        && saveUtilisateurs.controls['nom'].errors
+                        && saveUtilisateurs.controls['nom'].errors['minlength']">
+                        Le nom doit avoir au minumum 2 caracteres
+                    </span>
+        </div>
+        <div class="test">
+          <label class="titre-inpute" for="prenom">Prenom</label>
+          <input type="text" formControlName="prenom" class="champ-input" id="prenom" required>
+          <span class="text-danger"
+                *ngIf="saveUtilisateurs.controls['prenom'].touched
+                        && saveUtilisateurs.controls['prenom'].errors
+                        && saveUtilisateurs.controls['prenom'].errors['required']">
+                        Le prenoms de l'Utilisateurs est obligatoire
+                    </span>
+          <span class="text-danger"
+                *ngIf="saveUtilisateurs.controls['prenom'].touched
+                        && saveUtilisateurs.controls['prenom'].errors
+                        && saveUtilisateurs.controls['prenom'].errors['minlength']">
+                        Le prenoms doit avoir au minumum 2 caracteres
+                    </span>
+        </div>
+      </div>
+
+      <div class="test">
+          <label class="titre-inpute" for="email">Adresse email</label>
+          <input type="text" formControlName="email" class="champ-input" id="email" required>
+          <span class="text-danger"
+                *ngIf="saveUtilisateurs.controls['email'].touched
+                    && saveUtilisateurs.controls['email'].errors
+                    && saveUtilisateurs.controls['email'].errors['required']">
+                    L'adreese email de l'Utilisateurs est obligatoire
+                </span>
+          <span class="text-danger"
+                *ngIf="saveUtilisateurs.controls['email'].touched
+                    && saveUtilisateurs.controls['email'].errors
+                    && saveUtilisateurs.controls['email'].errors['email']">
+                    Le champ doit etre de type email
+                </span>
+        </div>
+      <div class="div-champ-input">
+        <div class="test">
+          <label class="titre-inpute" for="password">password</label>
+          <input type="password" formControlName="password" class="champ-input" id="password" required>
+          <span class="text-danger"
+                *ngIf="saveUtilisateurs.controls['password'].touched
+                    && saveUtilisateurs.controls['password'].errors
+                    && saveUtilisateurs.controls['password'].errors['required']">
+                    Le password est obligatoire
+                </span>
+        </div>
+      </div>
+      <div class="div-champ-input">
+        <div class="test">
+          <label class="titre-inpute" for="telephone">Telephone</label>
+          <input type="text" formControlName="telephone" class="champ-input" id="telephone" maxlength="15" required>
+          <span class="text-danger"
+                *ngIf="saveUtilisateurs.controls['telephone'].touched
+                    && saveUtilisateurs.controls['telephone'].errors
+                    && saveUtilisateurs.controls['telephone'].errors['required']">
+                    Le numero de telephone de l'etudiant est obligatoire
+                </span>
+          <span class="text-danger"
+                *ngIf="saveUtilisateurs.controls['telephone'].touched
+                    && saveUtilisateurs.controls['telephone'].errors
+                    && saveUtilisateurs.controls['telephone'].errors['minlength']">
+                    Le numero est insuffisant
+                </span>
+          <span class="text-danger"
+                *ngIf="saveUtilisateurs.controls['telephone'].touched
+                    && saveUtilisateurs.controls['telephone'].errors
+                    && saveUtilisateurs.controls['telephone'].errors['pattern']">
+                    Seul les chiffres sont autorises
+                </span>
+        </div>
+        <div class="test">
+          <label class="titre-inpute" for="adresse">adresse</label>
+          <input type="text" class="champ-input" formControlName="adresse" id="adresse" required>
+          <span class="text-danger"
+                *ngIf="saveUtilisateurs.controls['adresse'].touched
+                    && saveUtilisateurs.controls['adresse'].errors
+                    && saveUtilisateurs.controls['adresse'].errors['required']">
+                    L'adresse de l'etudiant est obligatoire
+                </span>
+          <span class="text-danger"
+                *ngIf="saveUtilisateurs.controls['adresse'].touched
+                    && saveUtilisateurs.controls['adresse'].errors
+                    && saveUtilisateurs.controls['adresse'].errors['minlength']">
+                    L'adresse doit avoir au minumum 5 caracteres
+                </span>
+        </div>
+      </div>
+      <div class="div-champ-input">
+        <div class="test">
+          <label class="titre-inpute" for="profil_id">Profile</label>
+          <select class="champ-input" formControlName="profil_id" id="profil_id" required>
+            <option>Selection le profile</option>
+            <option *ngFor="let profile of profiles" [ngValue]="profile.id">{{profile.libelle}}</option>
+          </select>
+          <span class="text-danger"
+                *ngIf="saveUtilisateurs.controls['profil_id'].touched
+                    && saveUtilisateurs.controls['profil_id'].errors
+                    && saveUtilisateurs.controls['profil_id'].errors['required']">
+                    La profile de l'utilisateurs est obligatoire
+                  </span>
+        </div>
+      </div>
+      <div class="style-btn-envoyer my-2">
+        <button [disabled]="saveUtilisateurs.invalid" class="save-btn">Enregistrer</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,72 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: #F3F2EF;
+}
+.banner_list_garages{
+  width: 100%;
+  height: 20rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.btn_detail_garage{
+  background-color: #FCB034;
+  border-radius: 25px;
+  align-items: center;
+  width: 150px;
+  height: 35px;
+  margin: 0 auto;
+  display: block;
+  margin-top: 50px;
+  font-size: 14px;
+  position: absolute;
+  bottom: 20px;
+}
+.card_garage {
+  box-shadow: 0 0px 2px 0 rgba(0, 0, 0, 0.2), 0 0px 4px 0 rgba(0, 0, 0, 0.19);
+  padding:10px 0;
+}
+.img_card_garage{
+  width: 100%;
+  padding-top: 10px;
+}
+.checked {
+  color: #FCB034;
+  margin-left: 10px;
+}
+.card_titre_de_la_recherche{
+  box-shadow: 0 0px 4px 0 rgba(0, 0, 0, 0.2), 0 0px 4px 0 rgba(0, 0, 0, 0.19);
+  background-color: #000054;
+  width: 72%;
+  color: white;
+  border-radius: 10px 10px 0 0;
+  height: 40px;
+}
+.div_bt_esarch button{
+  border-bottom: 5px solid #000054;
+  background-color: #D9D9D9;
+}
+select{
+  background-color: #D9D9D9;
+  border: none;
+}
+.btn_selected{
+  background-color: white;
+  border: #FCB034 2px solid;
+}
+@media only screen and (max-width: 320px) {
+  .banner_list_garages{
+    height: 15rem;
+  }
+  .div_bt_esarch button{
+      width: 10px;
+    height: 25px;
+    background-color: red;
+  }
+  .btn svg{
+      width: 10px;
+  }
+}

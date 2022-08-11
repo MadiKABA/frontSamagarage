@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <title>Document</title>
+</head>
+<body>
+
+<section >
+  <div id="banner"
+       class="bg-image d-flex flex-column justify-content-center align-items-end"
+       style="background-image: url('../../../assets/images/banner_img.png');">
+    <h1 class="me-md-5 p-sm-5 font-bold text-white text-center p-md-2 p-">TROUVEZ DES GARAGES PRÈS  DE CHEZ VOUS </h1>
+    <div class="input-group d-flex flex-row justify-content-end input_search ">
+      <input type="text" class="" id="" placeholder="Enntrer une zone">
+      <button class="btn " type="button" id="inputGroupFileAddon04">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+        </svg>
+      </button>
+    </div>
+    <div class="d-flex flex-row containt_search justify-content-end align-items-end">
+      <a (click)="alert()" routerLink="/ListGarage" class="btn location_zone" role="button" data-bs-toggle="button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+          <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/>
+          <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+        </svg>
+        Dakar</a>
+      <a href="#" class="btn location_zone" role="button" data-bs-toggle="button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+          <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/>
+          <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+        </svg>
+        Point E</a>
+      <a href="#" class="btn location_zone" role="button" data-bs-toggle="button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+          <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/>
+          <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+        </svg>
+        Mermoz</a>
+    </div>
+  </div>
+</section>
+<section id="section_pourquoi_sama_garage">
+  <h1 class="fw-bold text-center my-4">Pourquoi vous devriez utiliser SamaGarage</h1>
+  <div class="row mx-auto">
+    <div class="col-md-6 col-sm-12">
+      <ul class="text-start mt-3 list_pourquoi_sama_garage">
+        <li>
+          <span class="check_list">&#10003;</span><span class="text-end">Économisez jusqu'à 40%* sur votre prochaine réparation automobile.</span>
+        </li>
+        <li>
+          <span class="check_list">&#10003;</span><span class="text-center">Sélectionnez les travaux que vous souhaitez effectuer et obtenez des
+          devis en ligne de garages partenaires près de chez vous.</span>
+        </li>
+        <li>
+          <span class="check_list">&#10003;</span>Comparez des garages à proximité.
+        </li>
+        <li>
+          <span class="check_list">&#10003;</span>Prenez facilement RDV en ligne.
+        </li>
+        <li>
+          <span class="check_list">&#10003;</span>Profitez d'un réseau de garages partenaires de confiance
+          évalué par vos soins !
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-6 col-sm-12 mx-auto d-flex justify-content-start">
+      <img src="../../../assets/images/pourquoi_samagarage.png" class="img-fluid img_pourquoi_samagarage" alt="image pour quoi samagarage"/>
+    </div>
+  </div>
+</section>
+<section id="section_donner_visibilite_garage">
+  <h2 class="fw-bold text-center my-5">Donner de la visibilite a votre garage</h2>
+  <div class="row mx-auto">
+    <div class="col-sm-12 col-md-6 mx-auto">
+      <img src="../../../assets/images/sen-apprentis-46.jpg" class="img-fluid img_pourquoi_samagarage float-end" alt="image pour quoi samagarage"/>
+    </div>
+    <div class="col-sm-12 col-md-6 mx-auto">
+      <p  class="mt-5 px-5">
+        Lorem Ipsum is simply dummy text of the printing
+        and typesetting industry.Lorem Ipsum has been
+        the industry's standard dummy text ever since
+        the 1500s, when an unknown printer took a galley
+        of type and scrambled it to make a type
+        specimen book.
+        the 1500s, when an unknown printer took a galley
+        of type and scrambled it to make a type
+        specimen book.
+      </p>
+    </div>
+    <button class="btn_enregistrer_votre_garage">Enregistrer votre garage</button>
+  </div>
+</section>
+<section id="particularite_samagarage">
+  <div class="row overflow-hidden my-5 mx-5 div_content_paticularite">
+    <h2 class="fw-bold text-center mb-5 mt-3">Avec Sama Garage, vous pouvez </h2>
+    <div class="col-6 col-md-3 col-sm-6 content_paticularite">
+      <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="120" height="120"
+           preserveAspectRatio="xMidYMid meet" viewBox="0 0 1024 1024"><path fill="#000054" d="M688 312v-48c0-4.4-3.6-8-8-8H296c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8h384c4.4 0 8-3.6 8-8zm-392 88c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8h184c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8H296zm144
+            452H208V148h560v344c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V108c0-17.7-14.3-32-32-32H168c-17.7 0-32 14.3-32 32v784c0 17.7 14.3 32 32 32h272c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm445.7 51.5l-93.3-93.3C814.7 780.7 828 743.9 828 704c0-97.2-78.8-176-176-176s-176 78.8-176 176s78.8 176 176 176c35.8 0 69-10.7 96.8-29l94.7 94.7c1.6 1.6 3.6 2.3 5.6 2.3s4.1-.8 5.6-2.3l31-31a7.9 7.9 0 0 0 0-11.2zM652 816c-61.9 0-112-50.1-112-112s50.1-112 112-112s112 50.1 112 112s-50.1 112-112 112z"/>
+      </svg>
+      <p class="text-center fw-bold fs-4 titre_icon m-0">Cherche un garage</p>
+      <p class="text-center">Trouver le garage le plus proche de vous </p>
+    </div>
+    <div class="col-6 col-md-3 col-sm-6 content_paticularite">
+      <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="120" height="120" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="#000054" d="M11 14H9a9 9 0 0 1 9-9v2c-3.87 0-7 3.13-7 7zm7-3V9c-2.76 0-5 2.24-5 5h2c0-1.66 1.34-3 3-3zM7 4c0-1.11-.89-2-2-2s-2 .89-2 2s.89 2 2 2s2-.89 2-2zm4.45.5h-2A2.99 2.99 0 0 1 6.5 7h-3C2.67 7 2 7.67 2 8.5V11h6V8.74a4.97 4.97 0 0 0 3.45-4.24zM19 17c1.11 0 2-.89 2-2s-.89-2-2-2s-2 .89-2 2s.89 2 2 2zm1.5 1h-3a2.99 2.99 0 0 1-2.95-2.5h-2A4.97 4.97 0 0 0 16 19.74V22h6v-2.5c0-.83-.67-1.5-1.5-1.5z"/>
+      </svg>
+      <p class="text-center fw-bold fs-4 titre_icon m-0">Contacter un garage</p>
+      <p class="text-center">Contacter lun garage en  deux click</p>
+    </div>
+    <div class="col-6 col-md-3 col-sm-6  content_paticularite">
+      <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="120" height="120" preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16"><path fill="#000054" d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327l4.898.696c.441.062.612.636.282.95l-3.522 3.356l.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+      </svg>
+      <p class="text-center fw-bold fs-4 titre_icon m-0">Noter un garage</p>
+      <p class="text-center">Noter un garage apres apres un service</p>
+    </div>
+    <div class="col-6 col-md-3 col-sm-6  content_paticularite">
+      <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="120" height="120" preserveAspectRatio="xMidYMid meet" viewBox="0 0 20 20"><path fill="#000054" d="M3 6c0-1.1.9-2 2-2h8l4-4h2v16h-2l-4-4H5a2 2 0 0 1-2-2H1V6h2zm8 9v5H8l-1.67-5H5v-2h8v2h-2z"/>
+      </svg>
+      <p class="text-center fw-bold fs-4 titre_icon m-0">Noter un garage</p>
+      <p class="text-center">Publier ou  rechercher les annonces </p>
+    </div>
+    <button class="btn_enregistrer_votre_garage">Trouver des annonce</button>
+  </div>
+</section>
+<section id="list_garage_aime">
+  <div class="row  my-5 mx-5  div_content_paticularite justify-content-center">
+    <h2 class="text-center fw-bold my-5">Les automobilistes aiment ces garages</h2>
+    <div class="col-md-3 col-sm-12 card_automobiliste_aime p-3 ">
+      <p class="d-flex justify-content-between my-0">
+        <span>Nom Garage</span>
+        <span>il y a 1 jour</span>
+      </p>
+      <div class="my-1">
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+      </div>
+      <p>Lorem Ipsum is simply dummy text of the printing
+        and typesetting industry.Lorem Ipsum has been
+        the industry's standard dummy text ever since
+        the 1500s
+      </p>
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="35" height="35" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="currentColor" d="M7.5 6.5C7.5 8.981 9.519 11 12 11s4.5-2.019 4.5-4.5S14.481 2 12 2S7.5 4.019 7.5 6.5zM20 21h1v-1c0-3.859-3.141-7-7-7h-4c-3.86 0-7 3.141-7 7v1h17z"/>
+        </svg><span class="fw-bold">Non User</span>
+      </p>
+
+    </div>
+    <div class="col-md-3 col-sm-12 card_automobiliste_aime p-3 mx-2">
+      <p class="d-flex justify-content-between my-0">
+        <span>Nom Garage</span>
+        <span>il y a 1 jour</span>
+      </p>
+      <div class="my-1">
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+      </div>
+      <p>Lorem Ipsum is simply dummy text of the printing
+        and typesetting industry.Lorem Ipsum has been
+        the industry's standard dummy text ever since
+        the 1500s
+      </p>
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="35" height="35" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="currentColor" d="M7.5 6.5C7.5 8.981 9.519 11 12 11s4.5-2.019 4.5-4.5S14.481 2 12 2S7.5 4.019 7.5 6.5zM20 21h1v-1c0-3.859-3.141-7-7-7h-4c-3.86 0-7 3.141-7 7v1h17z"/>
+        </svg><span class="fw-bold">Non User</span>
+      </p>
+    </div>
+    <div class="col-md-3 col-sm-12 card_automobiliste_aime p-3 ">
+      <p class="d-flex justify-content-between my-0">
+        <span>Nom Garage</span>
+        <span>il y a 1 jour</span>
+      </p>
+      <div class="my-1">
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+      </div>
+      <p>Lorem Ipsum is simply dummy text of the printing
+        and typesetting industry.Lorem Ipsum has been
+        the industry's standard dummy text ever since
+        the 1500s
+      </p>
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="28" height="28" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="currentColor" d="M7.5 6.5C7.5 8.981 9.519 11 12 11s4.5-2.019 4.5-4.5S14.481 2 12 2S7.5 4.019 7.5 6.5zM20 21h1v-1c0-3.859-3.141-7-7-7h-4c-3.86 0-7 3.141-7 7v1h17z"/>
+        </svg><span class="fw-bold">Non User</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/iconify/2.0.0/iconify.min.js" integrity="sha512-lYMiwcB608+RcqJmP93CMe7b4i9G9QK1RbixsNu4PzMRJMsqr/bUrkXUuFzCNsRUo3IXNUr5hz98lINURv5CNA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>

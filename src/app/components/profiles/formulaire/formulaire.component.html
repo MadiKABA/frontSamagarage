@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<div class="formulaire-container">
+  <h1 class="text-center text-syle">Creer un profile</h1>
+  <div class="fom-container">
+    <div *ngIf="errorMessage">
+      <p class="text-center text-danger">{{errorMessage}}</p>
+    </div>
+    <form [formGroup]="addProfile" (ngSubmit)="save()">
+      <div class="div-champ-input">
+        <div class="test">
+          <label class="titre-inpute" for="nom">Le libelle du profile *</label>
+          <input type="text" formControlName="libelle" class="champ-input" id="nom" maxlength="100">
+          <div *ngIf="controleSaisie['libelle'].touched && controleSaisie['libelle'].invalid">
+            <p *ngIf="controleSaisie['libelle'].errors && controleSaisie['libelle'].errors['required']" class="text-danger">
+              * Le champs est obligatoire
+            </p>
+            <p *ngIf="controleSaisie['libelle'].errors" class="text-danger">
+              * Le champs ne doit pas avoir des caracteres speciaux
+            </p>
+
+          </div>
+        </div>
+      </div>
+      <div class="style-btn-envoyer my-2">
+        <button [disabled]="addProfile.invalid" class="save-btn">Enregistrer</button>
+      </div>
+    </form>
+  </div>
+
+</div>
+</body>
+</html>
