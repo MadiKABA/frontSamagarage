@@ -28,7 +28,11 @@
             ],
             "styles": [
               "src/styles.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "../node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "../node_modules/flat-icons/ecommerce.css",
+              "../node_modules/flat-icons/interface.css",
+              "../node_modules/flat-icons/technology.css",
+              "../node_modules/flat-icons/creative.css"
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
