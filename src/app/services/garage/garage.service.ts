@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {environment} from "../../../environments/environment";
 import {HttpClient, HttpErrorResponse} from "@angular/common/http";
-import {catchError, Observable, throwError} from "rxjs";
+import {catchError, Observable, pipe, throwError} from "rxjs";
 import {Profile} from "../../models/profile.model";
 import {Garage} from "../../models/garage.model";
 
@@ -50,5 +50,18 @@ export class GarageService {
         resolve({lat:resp.coords.latitude,long:resp.coords.longitude})
       })
     })
+  }
+  public getOneGarage(id:number):Observable<any>{
+    return this.http.get(this.host+"/"+id)
+      .pipe(
+        catchError(this.handleError)
+      )
+  }
+
+  public update(id:number,garage:any):Observable<any>{
+    return this.http.put(this.host+"/"+id,garage)
+    pipe(
+      catchError(this.handleError)
+    )
   }
 }
