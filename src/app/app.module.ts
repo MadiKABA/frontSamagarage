@@ -9,8 +9,9 @@ import {RouterModule} from "@angular/router";
 import {PublicModule} from "./public/public.module";
 import {AdminModule} from "./admin/admin.module";
 import {ReactiveFormsModule} from "@angular/forms";
-
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RatingModule } from 'ngx-bootstrap/rating';
+import {AuthModule} from "./auth/auth.module";
 
 
 @NgModule({
@@ -25,7 +26,11 @@ import {ReactiveFormsModule} from "@angular/forms";
     HttpClientModule,
     ReactiveFormsModule,
     PublicModule,
-    AdminModule
+    AdminModule,
+    BrowserAnimationsModule,
+    RatingModule.forRoot(),
+    AuthModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

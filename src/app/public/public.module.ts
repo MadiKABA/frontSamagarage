@@ -10,7 +10,10 @@ import {MenuComponent} from "./menu/menu.component";
 import {AppRoutingModule} from "../app-routing.module";
 import {RouterModule} from "@angular/router";
 import {HttpClientModule} from "@angular/common/http";
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {NgbRatingModule} from "@ng-bootstrap/ng-bootstrap";
+import {RatingModule} from "ngx-bootstrap/rating";
+
 
 
 
@@ -30,6 +33,10 @@ import {ReactiveFormsModule} from "@angular/forms";
     RouterModule,
     HttpClientModule,
     ReactiveFormsModule,
+    NgbRatingModule,
+    FormsModule,
+    RatingModule,
+
   ]
 })
 export class PublicModule { }

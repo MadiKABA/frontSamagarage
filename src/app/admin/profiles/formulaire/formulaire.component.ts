@@ -28,21 +28,8 @@ export class FormulaireComponent implements OnInit {
     libelle:['',[Validators.required,Validators.pattern(/[a-zA-Z]/),Validators.minLength(3)]]
   })
   save(){
-    /*if(this.addProfile.invalid) return
-    if(this.id==0){*/
-      this.profileService.saveProfile(this.addProfile.value).subscribe(
-        {
-          next:(data)=>{
-            this.addProfile.reset({})
-
-          },
-          error:(error)=>{
-            this.errorMessage=error;
-
-          }
-        }
-      )
-   /* }else{
+    if(this.addProfile.invalid) return
+    if(this.id!=null){
       this.profileService.updateProfile(this.id,this.addProfile.value).subscribe(
         {
           next:(data)=>{
@@ -55,11 +42,24 @@ export class FormulaireComponent implements OnInit {
           }
         }
       )
-    }*/
+    }else{
+      this.profileService.saveProfile(this.addProfile.value).subscribe(
+        {
+          next:(data)=>{
+            this.addProfile.reset({})
+            this.redirection();
+          },
+          error:(error)=>{
+            this.errorMessage=error;
+
+          }
+        }
+      )
+    }
 
   }
   redirection(){
-    this.routerRedirect.navigate(['listeProfile']);
+    this.routerRedirect.navigate(['/admin/listeProfile']);
   }
   /*Controle les champs de saisie*/
   get controleSaisie(){

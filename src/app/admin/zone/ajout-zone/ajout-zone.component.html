@@ -1,15 +1,6 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
-<body>
+
 <div class="formulaire-container">
-  <h1 class="text-center text-syle">Creer un profile</h1>
+  <h1 class="text-center text-syle">Creer une Zone</h1>
   <div class="fom-container">
     <div *ngIf="errorMessage">
       <p class="text-center text-danger">{{errorMessage}}</p>
@@ -17,7 +8,7 @@
     <form [formGroup]="addZone" (ngSubmit)="save()">
       <div class="div-champ-input">
         <div class="test">
-          <label class="titre-inpute" for="nom">Le libelle du profile *</label>
+          <label class="titre-inpute" for="nom">Le libelle de la zone *</label>
           <input type="text" formControlName="libelle" class="champ-input" id="nom" maxlength="100">
           <div *ngIf="controleSaisie['libelle'].touched && controleSaisie['libelle'].invalid">
             <p *ngIf="controleSaisie['libelle'].errors && controleSaisie['libelle'].errors['required']" class="text-danger">
@@ -37,5 +28,3 @@
   </div>
 
 </div>
-</body>
-</html>

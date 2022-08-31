@@ -22,15 +22,12 @@ body{
   display: block;
   margin-top: 50px;
   font-size: 14px;
-  position: absolute;
-  bottom: 20px;
 }
 .card_garage {
   box-shadow: 0 0px 2px 0 rgba(0, 0, 0, 0.2), 0 0px 4px 0 rgba(0, 0, 0, 0.19);
   padding:10px 0;
 }
 .img_card_garage{
-  width: 100%;
   padding-top: 10px;
 }
 .checked {

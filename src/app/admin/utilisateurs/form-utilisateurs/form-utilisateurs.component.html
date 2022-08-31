@@ -1,6 +1,6 @@
 <div class="formulaire-container">
-  <h1 *ngIf="!data" class="text-center text-syle">Creer un Utilisateurs</h1>
-  <h1 *ngIf="data" class="text-center text-syle">Modifier un Utilisateurs</h1>
+  <h1 *ngIf="!utilisateur" class="text-center text-syle">Creer un Utilisateurs</h1>
+  <h1 *ngIf="utilisateur" class="text-center text-syle">Modifier un Utilisateurs</h1>
   <!--    {{this.saveAdministrateur.value | json}}-->
   <div *ngIf="errorMessage">
     <p class="text-center text-danger">{{errorMessage}}</p>
@@ -10,7 +10,7 @@
       <div class="div-champ-input">
         <div class="test">
           <label class="titre-inpute" for="nom">Nom</label>
-          <input type="text" formControlName="nom" class="champ-input" id="nom" maxlength="60" required>
+          <input type="text" formControlName="nom" class="form-control ms-3" id="nom" maxlength="60" required>
           <span class="text-danger"
                 *ngIf="saveUtilisateurs.controls['nom'].touched
                         && saveUtilisateurs.controls['nom'].errors
@@ -26,7 +26,7 @@
         </div>
         <div class="test">
           <label class="titre-inpute" for="prenom">Prenom</label>
-          <input type="text" formControlName="prenom" class="champ-input" id="prenom" required>
+          <input type="text" formControlName="prenom" class=" form-control ms-3" id="prenom" required>
           <span class="text-danger"
                 *ngIf="saveUtilisateurs.controls['prenom'].touched
                         && saveUtilisateurs.controls['prenom'].errors
@@ -44,7 +44,7 @@
 
       <div class="test">
           <label class="titre-inpute" for="email">Adresse email</label>
-          <input type="text" formControlName="email" class="champ-input" id="email" required>
+          <input type="text" formControlName="email" class=" form-control ms-3" id="email" required>
           <span class="text-danger"
                 *ngIf="saveUtilisateurs.controls['email'].touched
                     && saveUtilisateurs.controls['email'].errors
@@ -61,7 +61,7 @@
       <div class="div-champ-input">
         <div class="test">
           <label class="titre-inpute" for="password">password</label>
-          <input type="password" formControlName="password" class="champ-input" id="password" required>
+          <input type="password" formControlName="password" class="form-control ms-3" id="password" required>
           <span class="text-danger"
                 *ngIf="saveUtilisateurs.controls['password'].touched
                     && saveUtilisateurs.controls['password'].errors
@@ -73,7 +73,7 @@
       <div class="div-champ-input">
         <div class="test">
           <label class="titre-inpute" for="telephone">Telephone</label>
-          <input type="text" formControlName="telephone" class="champ-input" id="telephone" maxlength="15" required>
+          <input type="text" formControlName="telephone" class="form-control ms-3" id="telephone" maxlength="15" required>
           <span class="text-danger"
                 *ngIf="saveUtilisateurs.controls['telephone'].touched
                     && saveUtilisateurs.controls['telephone'].errors
@@ -95,7 +95,7 @@
         </div>
         <div class="test">
           <label class="titre-inpute" for="adresse">adresse</label>
-          <input type="text" class="champ-input" formControlName="adresse" id="adresse" required>
+          <input type="text" class="form-control ms-3" formControlName="adresse" id="adresse" required>
           <span class="text-danger"
                 *ngIf="saveUtilisateurs.controls['adresse'].touched
                     && saveUtilisateurs.controls['adresse'].errors
@@ -113,7 +113,7 @@
       <div class="div-champ-input">
         <div class="test">
           <label class="titre-inpute" for="profil_id">Profile</label>
-          <select class="champ-input" formControlName="profil_id" id="profil_id" required>
+          <select class="form-control ms-3" formControlName="profil_id" id="profil_id" required>
             <option>Selection le profile</option>
             <option *ngFor="let profile of profiles" [ngValue]="profile.id">{{profile.libelle}}</option>
           </select>

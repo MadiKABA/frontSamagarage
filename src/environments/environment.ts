@@ -9,6 +9,7 @@ export const environment = {
   hostZones:"http://127.0.0.1:8000/api/zones",
   hostGarages:"http://127.0.0.1:8000/api/garages",
   hostServices:"http://127.0.0.1:8000/api/services",
+  hostNotes:"http://127.0.0.1:8000/api/notes",
 };
 
 /*

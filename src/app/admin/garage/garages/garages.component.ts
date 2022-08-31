@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {Profile} from "../../../models/profile.model";
 import {Garage} from "../../../models/garage.model";
 import {GarageService} from "../../../services/garage/garage.service";
 import {environment} from "../../../../environments/environment";
-
+declare const $:any;
 @Component({
   selector: 'app-garages',
   templateUrl: './garages.component.html',
@@ -13,8 +13,11 @@ export class GaragesComponent implements OnInit {
 
   messageError!:string;
   garages!:Garage[];
-  urlImage:any="http://127.0.0.1:8000/public\\garage\\";
+  garageEdit!:Garage;
+  urlImage:any="http://localhost:8000";
+
   constructor(private serviceGarage:GarageService) { }
+
 
   ngOnInit(): void {
     this.getAll();
@@ -33,5 +36,11 @@ export class GaragesComponent implements OnInit {
 
   delete(id: number) {
 
+  }
+
+  bloquer(id: number) {
+
+    let statu=!this.garageEdit.etat
+    console.log('etat garage',statu);
   }
 }

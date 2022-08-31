@@ -24,7 +24,7 @@ export class AjoutZoneComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    //this.updateZone();
+    this.updateZone();
   }
 
   addZone=this.fb.group({
@@ -33,10 +33,23 @@ export class AjoutZoneComponent implements OnInit {
 
   save(){
     console.log(this.addZone.value);
-    /*if(this.addZone.invalid) return
+    if(this.addZone.invalid) return
     //alert("ok")
-    if(this.id==0){
-      alert("ok")*/
+    if(this.id!=null){
+      //alert("ok")
+      this.zoneService.updateZone(this.id,this.addZone.value).subscribe(
+        {
+          next:(data)=>{
+            this.addZone.reset({})
+            this.redirection();
+          },
+          error:(error)=>{
+            this.errorMessage=error;
+          }
+        }
+      )
+
+    }else{
       this.zoneService.saveZone(this.addZone.value).subscribe(
         {
           next:(data)=>{
@@ -49,23 +62,11 @@ export class AjoutZoneComponent implements OnInit {
           }
         }
       )
-    /*}else{
-      this.zoneService.updateZone(this.id,this.addZone.value).subscribe(
-        {
-          next:(data)=>{
-            this.addZone.reset({})
-            this.redirection();
-          },
-          error:(error)=>{
-            this.errorMessage=error;
-          }
-        }
-      )
-    }*/
+    }
 
   }
   redirection(){
-    this.routerRedirect.navigate(['listZones']);
+    this.routerRedirect.navigate(['/admin/listZones']);
   }
 
   /*Controle les champs de saisie*/
@@ -73,7 +74,7 @@ export class AjoutZoneComponent implements OnInit {
     return this.addZone.controls;
   }
 
-  /*updateZone(){
+  updateZone(){
     this.id=this.router.snapshot.params['id'];
     console.log(this.id);
     this.zoneService.getOneZone(this.id).subscribe({
@@ -89,5 +90,5 @@ export class AjoutZoneComponent implements OnInit {
         console.log(error);
       }
     })
-  }*/
+  }
 }

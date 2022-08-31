@@ -45,7 +45,7 @@ import {ReactiveFormsModule} from "@angular/forms";
     RouterModule,
     HttpClientModule,
     ReactiveFormsModule,
-    CommonModule
+    CommonModule,
   ]
 })
 export class AdminModule { }

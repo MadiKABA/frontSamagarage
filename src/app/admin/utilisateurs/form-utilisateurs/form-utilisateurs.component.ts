@@ -15,8 +15,8 @@ export class FormUtilisateursComponent implements OnInit {
   controleSaisie: any;
   errorMessage!:string
   profiles!:Profile[];
-  id:any
-  data!:Utilisateur
+  id!:number;
+  utilisateur!:Utilisateur
   profile!:Profile
   private router!: Router;
   constructor(
@@ -40,7 +40,7 @@ export class FormUtilisateursComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllProfiles();
-    //this.updateUser();
+    this.updateUser();
   }
   saveUtilisateurs=this.fb.group({
     nom:this.fb.control(null,[Validators.required,Validators.minLength(2)]),
@@ -60,15 +60,12 @@ export class FormUtilisateursComponent implements OnInit {
       console.log(utilisateur);
       this.serviceUtilisateurs.saveUtilisateurs(utilisateur).subscribe({
         next:(data)=>{
-          alert("Ajout effectuer avec success");
           this.redirction();
         },
         error:(error)=>{
           console.log(error);
         }
       })
-      //console.log('ajout de l\'etudiant',this.saveUtilisateurs.value);
-
     }else{
       this.serviceUtilisateurs.updateUser(this.id,this.saveUtilisateurs.value).subscribe(
         {
@@ -85,30 +82,29 @@ export class FormUtilisateursComponent implements OnInit {
   }
 
   redirction(){
-    this.routerRedirect.navigate(['/listeutilisateurs']);
+    this.routerRedirect.navigate(['/admin/listeutilisateurs']);
   }
 
-  /*updateUser(){
+  updateUser(){
     this.id=this.activatideRouter.snapshot.params['id'];
     console.log(this.id);
     this.serviceUtilisateurs.getOneUser(this.id).subscribe({
       next:(data:any)=>{
-        this.data=data[0];
-        console.log('le profile a modifier',this.data.id);
+        this.utilisateur=data[0];
+        console.log('user a modifier',this.utilisateur.id);
         this.saveUtilisateurs=this.fb.group({
-          nom:(this.data.nom),
-          prenom:(this.data.prenom),
-          email:(this.data.email),
-          password:(this.data.password),
-          telephone:(this.data.telephone),
-          adresse:(this.data.adresse),
+          nom:(this.utilisateur.nom),
+          prenom:(this.utilisateur.prenom),
+          email:(this.utilisateur.email),
+          password:(this.utilisateur.password),
+          telephone:(this.utilisateur.telephone),
+          adresse:(this.utilisateur.adresse),
           profil_id:({id:1}),
         })
-        //console.log(this.serviceUtilisateurs.value);
       },
       error:(error)=>{
         console.log(error);
       }
     })
-  }*/
+  }
 }

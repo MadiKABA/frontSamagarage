@@ -1,55 +1,52 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
-<body>
-<h1 class="text-syle">Liste des profiles</h1>
-<p class="text-center text-danger" *ngIf="messageError">{{messageError}}</p>
-<div class="formulaire-container" *ngIf="garages">
-  <div class="button-add-input-search my-4 mx-3">
-    <button class="button-add-user">
-      <i class="bi bi-plus-circle icone-add-user" routerLink="/AjoutGarage"></i>
-      <span class="titre-btn-add-user" routerLink="/AjoutGarage">Ajouter un profile</span>
-    </button>
-    <div>
-      <input type="search" class="input-search-admin" placeholder="Rechercher un profile">
-      <button class="btn-search-admin">
-        <i class="bi bi-search"></i>
+<div class="container">
+  <h1 class="text-syle">Liste des garages</h1>
+  <p class="text-center text-danger" *ngIf="messageError">{{messageError}}</p>
+  <div class="formulaire-container" *ngIf="garages">
+    <div class="button-add-input-search my-4 mx-3">
+      <button class="button-add-user">
+        <i class="bi bi-plus-circle icone-add-user" routerLink="/admin/AjoutGarage"></i>
+        <span class="titre-btn-add-user" routerLink="/admin/AjoutGarage">Ajouter un garage</span>
       </button>
+      <div>
+        <input type="search" class="input-search-admin" placeholder="Rechercher un profile">
+        <button class="btn-search-admin">
+          <i class="bi bi-search"></i>
+        </button>
+      </div>
+    </div>
+    <hr>
+    <div class="div-table-data">
+      <table id="listGarage"  class="table ">
+        <thead>
+        <tr>
+          <th scope="col" data-sortable="true">#</th>
+          <th scope="col">Nom</th>
+          <th scope="col">Description</th>
+          <th scope="col">Adresse</th>
+          <th scope="col">Image</th>
+          <th scope="col" colspan="3">Actions</th>
+        </tr>
+        </thead>
+        <tbody *ngIf="garages">
+        <tr *ngFor="let garage of garages">
+          <th scope="row">{{garage.id}}</th>
+          <td>{{garage.nom}}</td>
+          <td>{{garage.description}}</td>
+          <td>{{garage.adresse}}</td>
+          <td><img src="{{urlImage}}{{garage.image}}" style="width: 50px;height: 50px"></td>
+          <td class="style-icone" routerLink="/admin/updateGarage/{{garage.id}}">
+            <i class="bi bi-pencil-square"></i>
+          </td>
+          <td class="style-icone" (click)="delete(garage.id)">
+            <i class="bi bi-trash3-fill icone-delete"></i>
+          </td>
+          <td class="style-icone" (click)="bloquer(garage.id)">
+            <i class="bi bi-trash3-fill icone-delete"></i>
+          </td>
+        </tr>
+        </tbody>
+      </table>
     </div>
   </div>
-  <hr>
-  <div class="div-table-data">
-    <table class="table">
-      <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Nom</th>
-        <th scope="col">Description</th>
-        <th scope="col">Adresse</th>
-        <th scope="col">Image</th>
-        <th scope="col" colspan="3">Actions</th>
-      </tr>
-      </thead>
-      <tbody *ngIf="garages">
-      <tr *ngFor="let garage of garages">
-        <th scope="row">{{garage.id}}</th>
-        <td>{{garage.nom}}</td>
-        <td>{{garage.description}}</td>
-        <td>{{garage.adresse}}</td>
-        <td><img src="{{urlImage}}{{garage.image}}" style="width: 50px;height: 50px"></td>
-        <td class="style-icone" (click)="delete(garage.id)">
-          <i class="bi bi-trash3-fill icone-delete"></i>
-        </td>
-      </tr>
-      </tbody>
-    </table>
-  </div>
+
 </div>
-</body>
-</html>

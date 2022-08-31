@@ -1,3 +1,6 @@
+import {Note} from "./Note";
+import {Service} from "./service.model";
+
 export interface Garage{
   id:number;
   nom:string;
@@ -7,8 +10,14 @@ export interface Garage{
   latitude:string;
   heureOurverture:string;
   heureFermeture:string;
+  disponibilite:boolean
+  etat:boolean
   adresse:string;
   image:string;
   zone_id:bigint;
   Utilisateur_id:bigint;
+  telephone:string;
+  notes:Note[];
+  service:[];
+  services:Service[];
 }

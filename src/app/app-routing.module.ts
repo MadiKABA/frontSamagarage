@@ -16,6 +16,8 @@ import {ListGaragesComponent} from "./public/list-garages/list-garages.component
 import {PublicComponent} from "./public/public.component";
 import {TrouverUnGarageComponent} from "./public/trouver-un-garage/trouver-un-garage.component";
 import {AdminComponent} from "./admin/admin.component";
+import {LoginComponent} from "./auth/login/login/login.component";
+import {AuthComponent} from "./auth/auth.component";
 
 
 
@@ -28,7 +30,13 @@ const routes: Routes = [
     children:[
       { path: '', component: TrouverUnGarageComponent },
       { path: 'ListGarage', component: ListGaragesComponent },
-      { path: 'detaiGarage', component: DetailsGarageComponent },
+      { path: 'ListGarageZone/:id', component: ListGaragesComponent },
+      { path: 'detaiGarage/:id', component: DetailsGarageComponent },
+    ]
+  },
+  {path:'auth',component: AuthComponent,
+    children:[
+      {path: 'login',component: LoginComponent}
     ]
   },
   {path:'admin',component: AdminComponent,
@@ -47,6 +55,7 @@ const routes: Routes = [
       //gestion des garages
       {path:'listGarage',component:GaragesComponent},
       {path:'AjoutGarage',component:AjoutGarageComponent},
+      {path:'updateGarage/:id',component:AjoutGarageComponent},
       //gestion des services
       {path:'listeServices',component:ServicesComponent},
       {path:'AjoutServices',component:AjoutServiceComponent},
