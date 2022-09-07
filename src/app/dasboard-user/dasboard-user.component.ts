@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dasboard-user.component.css']
 })
 export class DasboardUserComponent implements OnInit {
-
+  sideNavStatus:boolean=false;
   constructor() { }
 
   ngOnInit(): void {
