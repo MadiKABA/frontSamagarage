@@ -6,12 +6,12 @@
       <i class="bi bi-list"></i>
     </div>
   </div>
-  <div class="section-profile-user btn" data-bs-toggle="dropdown">
-    <i class="bi bi-person-circle"></i>
+  <div class="section-profile-user btn" data-bs-toggle="dropdown" *ngIf="login.isLogggedIn()">
+    {{user.nom}} {{user.prenom}} <i class="bi bi-person-circle"></i>
   </div>
   <ul class="dropdown-menu">
-    <li class="text-center px-1">KABA</li>
-    <li routerLink="/" class="reglage-style"><i class="bi bi-box-arrow-right" style="color: #FCB034"></i></li>
+    <li class="text-center px-1" *ngIf="login.isLogggedIn()"></li>
+    <li routerLink="/" class="reglage-style"><i (click)="logout()" class="bi bi-box-arrow-right" style="color: #FCB034"></i></li>
   </ul>
 </nav>
 

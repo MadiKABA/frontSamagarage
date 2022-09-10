@@ -30,6 +30,7 @@ export class ListGaragesComponent implements OnInit {
       .subscribe({
         next:(data)=>{
           this.zone=data;
+          console.log(this.zone.garages);
         },
         error:(error)=>{
           console.log('error',error);

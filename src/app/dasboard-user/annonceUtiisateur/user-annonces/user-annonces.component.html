@@ -1,1 +1,59 @@
-<p>user-annonces works!</p>
+<div class="container mt-5">
+  <div class="row mx-0 pt-5">
+      <div class="col-md-4 col-sm-12">
+        <button class="card_info_annonce fw-bold" disabled>
+          <p>100 </p>
+          <span>Annonces publier</span>
+        </button>
+      </div>
+      <div class="col-md-4 col-sm-12">
+        <button class="card_info_annonce fw-bold" disabled>
+          <p>100 </p>
+          <span>Annonces cloturer</span>
+        </button>
+      </div>
+      <div class="col-md-4 col-sm-12">
+        <button class="card_info_annonce" routerLink="/userDashboard/AjoutAnnonce">
+          <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1.7em" height="1.7em" class="mx-3 style-icone" preserveAspectRatio="xMidYMid meet" viewBox="0 0 20 20"><path fill="#fcb034" d="M3 6c0-1.1.9-2 2-2h8l4-4h2v16h-2l-4-4H5a2 2 0 0 1-2-2H1V6h2zm8 9v5H8l-1.67-5H5v-2h8v2h-2z"/></svg>
+          <p>Nouvelle Annonce</p>
+        </button>
+      </div>
+  </div>
+  <h1 class="text-syle mt-5">Liste des annonces</h1>
+  <p class="text-center text-danger"></p>
+  <div class="formulaire-container">
+    <hr>
+    <div class="div-table-data">
+      <table id="listGarage"  class="table ">
+        <thead>
+        <tr>
+          <th scope="col" data-sortable="true">#</th>
+          <th scope="col">Nom</th>
+          <th scope="col">DatePublication</th>
+          <th scope="col">Image</th>
+          <th scope="col" colspan="3">Actions</th>
+        </tr>
+        </thead>
+        <tbody *ngIf="annonceUser">
+        <tr *ngFor="let annonces of annonceUser.annonces">
+          <th scope="row">{{annonces.id}}</th>
+          <td>{{annonces.titre}}</td>
+          <td>{{annonces.datePublication}}</td>
+          <td><img src="{{urlImage}}{{annonces.urlImage}}" style="width: 50px;height: 50px;object-fit: cover"></td>
+          <td class="style-icone" routerLink="/admin/updateGarage/{{annonces.id}}">
+            <i class="bi bi-pencil-square"></i>
+          </td>
+          <td class="style-icone" (click)="delete(annonces.id)">
+            <i class="bi bi-trash3-fill icone-delete"></i>
+          </td>
+          <td class="style-icone" (click)="cloturer(annonces.id)">
+            <svg *ngIf="annonces.cloture==false" xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16"><path fill="currentColor" d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607l1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4a2 2 0 0 0 0-4h7a2 2 0 1 0 0 4a2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0a1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0zm-1.646-7.646l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L8 8.293l2.646-2.647a.5.5 0 0 1 .708.708z"/></svg>
+            <svg *ngIf="annonces.cloture==true" xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16"><path fill="green" d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607l1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4a2 2 0 0 0 0-4h7a2 2 0 1 0 0 4a2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0a1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0zm-1.646-7.646l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L8 8.293l2.646-2.647a.5.5 0 0 1 .708.708z"/></svg>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>

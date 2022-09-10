@@ -12,11 +12,15 @@ import {ReactiveFormsModule} from "@angular/forms";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RatingModule } from 'ngx-bootstrap/rating';
 import {AuthModule} from "./auth/auth.module";
+import {MatIconModule} from "@angular/material/icon";
+import { DasboardUserComponent } from './dasboard-user/dasboard-user.component';
+import {DasboardUserModule} from "./dasboard-user/dasboard-user.module";
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    DasboardUserComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,6 +34,8 @@ import {AuthModule} from "./auth/auth.module";
     BrowserAnimationsModule,
     RatingModule.forRoot(),
     AuthModule,
+    MatIconModule,
+    DasboardUserModule,
 
   ],
   providers: [],

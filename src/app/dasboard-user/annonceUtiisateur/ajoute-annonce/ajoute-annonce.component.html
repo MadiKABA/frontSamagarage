@@ -1,0 +1,87 @@
+<div class="formulaire-container">
+  <h1 class="text-center text-syle">Creer Une Annonce</h1>
+  <div class="fom-container">
+    <div *ngIf="errorMessage">
+      <p class="text-center text-danger">{{errorMessage}}</p>
+    </div>
+    <form [formGroup]="addAnnonce" (ngSubmit)="save()">
+      <div class="div-champ-input">
+        <div class="row">
+          <div class="test col">
+            <label class="titre-inpute" for="titre">titre</label>
+            <input type="text" formControlName="titre" class="champ-input form-control" id="titre" maxlength="100">
+            <div *ngIf="controleSaisie['titre'].touched && controleSaisie['titre'].invalid">
+              <p *ngIf="controleSaisie['titre'].errors && controleSaisie['titre'].errors['required']" class="text-danger">
+                * Le champs est obligatoire
+              </p>
+              <p *ngIf="controleSaisie['titre'].errors" class="text-danger">
+                * Le champs ne doit pas avoir des caracteres speciaux
+              </p>
+            </div>
+          </div>
+          <div class="test col">
+            <label class="titre-inpute" for="prix">Prix</label>
+            <input type="number" formControlName="prix" class="champ-input form-control" id="prix" maxlength="100">
+            <div *ngIf="controleSaisie['prix'].touched && controleSaisie['prix'].invalid">
+              <p *ngIf="controleSaisie['prix'].errors && controleSaisie['prix'].errors['required']" class="text-danger">
+                * Le champs est obligatoire
+              </p>
+              <p *ngIf="controleSaisie['prix'].errors" class="text-danger">
+                * Le champs ne doit pas avoir des caracteres speciaux
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="test col">
+            <label class="titre-inpute" for="typeAnnonce_id">TypeAnnonce</label>
+            <select class="champ-input form-control" formControlName="typeAnnonce_id" id="typeAnnonce_id" required>
+              <option>Selection le type d'annonce</option>
+              <option *ngFor="let typeAnnonce of typeAnnonces" [ngValue]="typeAnnonce.id">{{typeAnnonce.libelle}}</option>
+            </select>
+            <div *ngIf="controleSaisie['typeAnnonce_id'].touched && controleSaisie['typeAnnonce_id'].invalid">
+              <p *ngIf="controleSaisie['typeAnnonce_id'].errors && controleSaisie['typeAnnonce_id'].errors['required']" class="text-danger">
+                * Le champs est obligatoire
+              </p>
+              <p *ngIf="controleSaisie['typeAnnonce_id'].errors" class="text-danger">
+                * Le champs ne doit pas avoir des caracteres speciaux
+              </p>
+            </div>
+          </div>
+          <div class="test col">
+            <label class="titre-inpute" for="urlImage">Image</label>
+            <input type="file" formControlName="urlImage" class="champ-input form-control" id="urlImage" (change)="uploadImage($event)">
+            <div *ngIf="controleSaisie['urlImage'].touched && controleSaisie['urlImage'].invalid" >
+              <p *ngIf="controleSaisie['urlImage'].errors && controleSaisie['urlImage'].errors['required']" class="text-danger">
+                * Le champs est obligatoire
+              </p>
+              <p *ngIf="controleSaisie['urlImage'].errors" class="text-danger">
+                * Le champs ne doit pas avoir des caracteres speciaux
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-floating">
+            <textarea class="form-control" formControlName="description" id="description" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+            <div *ngIf="controleSaisie['description'].touched && controleSaisie['description'].invalid">
+              <p *ngIf="controleSaisie['description'].errors && controleSaisie['description'].errors['required']" class="text-danger">
+                * Le champs est obligatoire
+              </p>
+              <p *ngIf="controleSaisie['description'].errors" class="text-danger">
+                * Le champs ne doit pas avoir des caracteres speciaux
+              </p>
+            </div>
+
+            <label for="floatingTextarea">Description</label>
+          </div>
+
+        </div>
+      </div>
+      <div class="style-btn-envoyer my-2">
+        <button [disabled]="addAnnonce.invalid" class="save-btn">Enregistrer</button>
+      </div>
+    </form>
+  </div>
+
+</div>

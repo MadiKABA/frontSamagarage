@@ -12,14 +12,18 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
         integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
         crossorigin=""/>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css' rel='stylesheet' />
   <!-- Make sure you put this AFTER Leaflet's CSS -->
   <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
           integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
           crossorigin=""></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+  <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
 </head>
 <body>
-<main *ngIf="garage">
-  <section id="banner_list_garages " >
+<main >
+  <section id="banner_list_garages "*ngIf="garage" >
     <div class="banner_list_garages d-flex flex-row p-md-5 p-3"
          style="background-image: url('../../../assets/images/istockphotobackground.jpg');">
         <div class="div_img_garage">
@@ -32,7 +36,7 @@
             <ngb-rating [max]="5" [rate]="moyenneAvis" [readonly]="true" style="font-size: 24px"></ngb-rating>
           </div>
           <p class="text-white" *ngIf="nbreAvis && moyenneAvis">
-            <span class="me-2">{{moyenneAvis}}</span>
+            <span class="me-2">{{moyenneAvis}}</span>/
             <span>{{nbreAvis}} avis</span>
           </p>
         </div>
@@ -40,7 +44,7 @@
   </section>
   <section class="container">
       <div class="row mt-5">
-          <div class="col-12 col-md-7 mx-2">
+          <div class="col-12 col-md-7 " *ngIf="garage">
             <div class="card_detail_garage mb-2 bg-white">
               <p class="ms-4">{{garage.description}}</p>
             </div>
@@ -80,11 +84,11 @@
               <button class="btn m-0 m-auto">Vois plus d'avis</button>
             </div>
           </div>
-          <div class="col-12 col-md-4">
-            <div id="map">
+          <div class="col-12 col-md-5">
+            <div id="leafletmap">
               <!--<img src="../../../assets/images/imgmaps.gif" class="img-fluid w-100">-->
             </div>
-            <div class="card_detail_garage1 mb-2 bg-white text-center my-1"><p class="ms-4">{{garage.adresse}}</p></div>
+            <div *ngIf="garage" class="card_detail_garage1 mb-2 bg-white text-center my-1"><p class="ms-4">{{garage.adresse}}</p></div>
             <div class="card_detail_garage1 mb-2 bg-white px-2 my-1">
               <h5 class="text-center">Votre Avis:</h5>
               <form [formGroup]="addNote" (ngSubmit)="saveNote()">

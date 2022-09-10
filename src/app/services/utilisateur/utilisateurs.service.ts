@@ -63,5 +63,4 @@ export class UtilisateursService {
         catchError(this.handleError)
       )
   }
-
 }

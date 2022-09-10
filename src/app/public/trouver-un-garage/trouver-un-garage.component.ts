@@ -10,6 +10,9 @@ import {Zone} from "../../models/Zone.model";
 export class TrouverUnGarageComponent implements OnInit {
   messageError!:string;
   zones!:Zone[];
+  nbreAvis:any;
+  moyenneAvis:any;
+  totalAvis:any;
   constructor(private serviceZone:ZoneServiceService) { }
   ngOnInit(): void {
       this.getAll()
@@ -19,7 +22,7 @@ export class TrouverUnGarageComponent implements OnInit {
       .subscribe({
         next:(data)=>{
           this.zones=data;
-          console.log('data',data);
+          console.log('data',this.zones);
         },
         error:(error)=>{
           console.log('error',error);

@@ -23,29 +23,32 @@ import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
-  declarations: [
-    NavBarComponent,
-    SideBarComponent,
-    AdminComponent,
-    ListProfileComponent,
-    FormulaireComponent,
-    ListUtilisateursComponent,
-    FormUtilisateursComponent,
-    ListZonesComponent,
-    AjoutZoneComponent,
-    GaragesComponent,
-    AjoutGarageComponent,
-    ServicesComponent,
-    AjoutServiceComponent,
-  ],
-  imports: [
-    BrowserModule,
-    NgbModule,
-    AppRoutingModule,
-    RouterModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    CommonModule,
-  ]
+    declarations: [
+        NavBarComponent,
+        SideBarComponent,
+        AdminComponent,
+        ListProfileComponent,
+        FormulaireComponent,
+        ListUtilisateursComponent,
+        FormUtilisateursComponent,
+        ListZonesComponent,
+        AjoutZoneComponent,
+        GaragesComponent,
+        AjoutGarageComponent,
+        ServicesComponent,
+        AjoutServiceComponent,
+    ],
+    exports: [
+        NavBarComponent
+    ],
+    imports: [
+        BrowserModule,
+        NgbModule,
+        AppRoutingModule,
+        RouterModule,
+        HttpClientModule,
+        ReactiveFormsModule,
+        CommonModule,
+    ]
 })
 export class AdminModule { }

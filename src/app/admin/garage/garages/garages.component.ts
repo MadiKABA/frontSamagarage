@@ -33,14 +33,20 @@ export class GaragesComponent implements OnInit {
       }
     })
   }
-
-  delete(id: number) {
-
-  }
-
   bloquer(id: number) {
 
     let statu=!this.garageEdit.etat
     console.log('etat garage',statu);
+  }
+  delete(id:number){
+    this.serviceGarage.delete(id).subscribe({
+      next:(data)=>{
+        // console.log(id);
+        this.getAll();
+      },
+      error:(error: string)=>{
+        this.messageError=error
+      }
+    })
   }
 }

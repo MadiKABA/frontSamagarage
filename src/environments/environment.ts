@@ -10,6 +10,11 @@ export const environment = {
   hostGarages:"http://127.0.0.1:8000/api/garages",
   hostServices:"http://127.0.0.1:8000/api/services",
   hostNotes:"http://127.0.0.1:8000/api/notes",
+  hostAnnonce:"http://127.0.0.1:8000/api/annonces",
+  hostTypeAnnonce:"http://127.0.0.1:8000/api/typeAnnonces",
+  mapbox: {
+    accessToken: 'pk.eyJ1Ijoia2lha2FiYSIsImEiOiJjbDdybWlkdjQwMjVnM29wMXdrcXZlYnd0In0.kiKMgfXI1BxO-hIjwFFH_Q',
+  },
 };
 
 /*

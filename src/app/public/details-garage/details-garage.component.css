@@ -66,5 +66,5 @@ body{
   display: inline-block;
   list-style: none;
 }
-#map { height: 180px;
+#leafletmap { height: 400px;
 background-color: #000054}

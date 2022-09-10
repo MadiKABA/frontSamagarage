@@ -1,3 +1,5 @@
+import {Annonce} from "./annonce";
+
 export interface Utilisateur{
   id:bigint;
   nom:string;
@@ -8,4 +10,5 @@ export interface Utilisateur{
   statut:boolean;
   adresse:string;
   profil_id:bigint;
+  annonces:Annonce[];
 }

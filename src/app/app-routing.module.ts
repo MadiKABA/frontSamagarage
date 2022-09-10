@@ -18,6 +18,12 @@ import {TrouverUnGarageComponent} from "./public/trouver-un-garage/trouver-un-ga
 import {AdminComponent} from "./admin/admin.component";
 import {LoginComponent} from "./auth/login/login/login.component";
 import {AuthComponent} from "./auth/auth.component";
+import {ListOffresComponent} from "./public/list-offres/list-offres.component";
+import {AdminGuard} from "./services/admin.guard";
+import {DasboardUserComponent} from "./dasboard-user/dasboard-user.component";
+import {UserGarageComponent} from "./dasboard-user/garageUtilisateur/user-garage/user-garage.component";
+import {UserAnnoncesComponent} from "./dasboard-user/annonceUtiisateur/user-annonces/user-annonces.component";
+import {AjouteAnnonceComponent} from "./dasboard-user/annonceUtiisateur/ajoute-annonce/ajoute-annonce.component";
 
 
 
@@ -32,6 +38,7 @@ const routes: Routes = [
       { path: 'ListGarage', component: ListGaragesComponent },
       { path: 'ListGarageZone/:id', component: ListGaragesComponent },
       { path: 'detaiGarage/:id', component: DetailsGarageComponent },
+      { path: 'listOffres', component: ListOffresComponent },
     ]
   },
   {path:'auth',component: AuthComponent,
@@ -40,6 +47,7 @@ const routes: Routes = [
     ]
   },
   {path:'admin',component: AdminComponent,
+    canActivate:[AdminGuard],
     children:[
       { path: 'listeProfile', component: ListProfileComponent },
       {path:'ajoutProfile',component: FormulaireComponent},
@@ -60,7 +68,15 @@ const routes: Routes = [
       {path:'listeServices',component:ServicesComponent},
       {path:'AjoutServices',component:AjoutServiceComponent},
       {path:'updateService',component:AjoutServiceComponent},
-    ]},
+    ]
+  },
+  {path:'userDashboard',component:DasboardUserComponent,
+  children:[
+    {path: 'userGarage',component: UserGarageComponent},
+    {path: 'AjoutAnnonce',component: AjouteAnnonceComponent},
+    {path: 'userAnnonce',component: UserAnnoncesComponent},
+
+  ]}
 
 
 ];

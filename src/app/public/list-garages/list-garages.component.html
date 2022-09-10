@@ -5,7 +5,6 @@
   </div>
 </section>
 <section class="container d-flex flex-column justify-content-center" *ngIf="zone">
-
   <div class="card_garage row  m-0 m-auto  bg-white mb-2 mt-1" *ngFor="let garage of zone.garages">
     <div class="col-md-2 px-2 col-sm-12 py-2 img_garage " *ngIf="garage.disponibilite && garage.etat">
       <img src="{{urlImage}}{{garage.image}}" alt="image du garage" class="img-fluid img_card_garage ms-3"/>

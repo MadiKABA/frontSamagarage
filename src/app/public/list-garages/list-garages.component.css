@@ -29,6 +29,9 @@ body{
 }
 .img_card_garage{
   padding-top: 10px;
+  height: 150px;
+  width: 500px;
+  object-fit: contain;
 }
 .checked {
   color: #FCB034;

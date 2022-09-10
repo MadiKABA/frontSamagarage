@@ -10,6 +10,7 @@ import {Garage} from "../../models/garage.model";
 })
 export class GarageService {
   private host=environment.hostGarages;
+  private mapbostoken=environment.mapbox;
   constructor( private http:HttpClient) { }
 
   //tout les garages
@@ -64,4 +65,11 @@ export class GarageService {
       catchError(this.handleError)
     )
   }
+  public delete(id:number){
+    return this.http.delete(this.host+"/"+id)
+      .pipe(
+        catchError(this.handleError)
+      )
+  }
+
 }

@@ -1,0 +1,12 @@
+### Send POST request with json body
+POST http://127.0.0.1:8000/oauth/token
+Content-Type: application/json
+
+{
+  "username":"bianka33@example.net",
+  "password":"password",
+  "grant_type":"password",
+  "client_id":2,
+  "client_secret":"kARM0aPnD18hcilpuko78CQ8M2EyBno0QWMSsfo3",
+  "scope":"*"
+}
